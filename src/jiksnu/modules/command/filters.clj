@@ -53,9 +53,7 @@
 
 (deffilter #'actions.auth/login :command
   [action request]
-  (let [[username password] (:args request)
-        user (model.user/get-user username)]
-    (action user password)))
+  (apply action (:args request)))
 
 (deffilter #'actions.auth/whoami :command
   [action request]
@@ -183,6 +181,11 @@
   [action id]
   (when-let [item (model.user/fetch-by-id id)]
     (action item)))
+
+(deffilter #'actions.user/register :command
+  [action {[username password] :args}]
+  (action {:username username
+           :password password}))
 
 (deffilter #'actions.user/update-record :command
   [action id]

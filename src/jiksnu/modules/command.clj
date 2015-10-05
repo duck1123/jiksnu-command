@@ -7,6 +7,7 @@
             [jiksnu.actions.activity-actions :as actions.activity]
             [jiksnu.actions.site-actions :as actions.site]
             [jiksnu.actions.stream-actions :as actions.stream]
+            [jiksnu.actions.user-actions :as actions.user]
             ))
 
 ;; This is where the module definition will be
@@ -28,4 +29,5 @@
 (add-command! "invoke-action"   #'actions/invoke-action)
 (add-command! "list-activities" #'actions.stream/public-timeline)
 (add-command! "ping"            #'actions.site/ping)
+(add-command! "register"        #'actions.user/register)
 (add-command! "whoami"          #'actions.auth/whoami)
