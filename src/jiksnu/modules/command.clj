@@ -1,13 +1,14 @@
 (ns jiksnu.modules.command
   (:require [ciste.commands :refer [add-command! command-names]]
             [jiksnu.actions :as actions]
-            jiksnu.modules.command.filters
-            ;; [jiksnu.modules.http.actions :as http.actions]
             [jiksnu.actions.auth-actions :as actions.auth]
             [jiksnu.actions.activity-actions :as actions.activity]
             [jiksnu.actions.site-actions :as actions.site]
             [jiksnu.actions.stream-actions :as actions.stream]
             [jiksnu.actions.user-actions :as actions.user]
+            jiksnu.modules.command.filters
+            ;; [jiksnu.modules.http.actions :as http.actions]
+            jiksnu.modules.json.views.site-views
             ))
 
 ;; This is where the module definition will be
